@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/idRLBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_style"
+    android:padding="20dp">
+
+    <!--ImageView for displaying our image-->
+    <ImageView
+        android:id="@+id/idIVImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/baseline_camera_alt_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="5dp" />
+
+    <!--Text view for displaying a heading text-->
+    <Button
+        android:id="@+id/idTVCamera"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_buttons"
+        android:padding="5dp"
+        android:text="Camera"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/idIVImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/idIVGallery"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/baseline_image_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idIVImage"
+        android:layout_below="@id/idIVImage"
+        android:padding="5dp" />
+
+    <!--Text View for displaying description text-->
+    <Button
+        android:id="@+id/idTVGallery"
+        android:background="@drawable/custom_buttons"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVCamera"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/idIVImage"
+        android:padding="5dp"
+        android:text="Gallery"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@+id/idIVGallery"
+        app:layout_constraintTop_toBottomOf="@id/idTVCamera"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

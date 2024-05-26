@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SnakeGameScreen"
+    android:id="@+id/snakeGameScreen">
+
+    <Button
+        android:layout_width="98dp"
+        android:layout_height="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/downButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/transparent"
+        android:drawableBottom="@drawable/round_arrow_drop_up_24"
+        android:id="@+id/upButton">
+
+    </Button>
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="74dp"
+        android:layout_height="97dp"
+        android:background="@android:color/transparent"
+        android:drawableStart="@drawable/round_arrow_right_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircle="@+id/upButton"
+        app:layout_constraintCircleAngle="115"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </Button>
+
+    <Button
+        android:id="@+id/downButton"
+        android:layout_width="98dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="50dp"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/round_arrow_drop_down_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </Button>
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="73dp"
+        android:layout_height="98dp"
+        android:background="@android:color/transparent"
+        android:drawableEnd="@drawable/round_arrow_left_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircle="@+id/upButton"
+        app:layout_constraintCircleAngle="245"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

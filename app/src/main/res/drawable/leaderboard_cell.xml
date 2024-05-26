@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp1" android:duration="50" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp2" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp3" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp4" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp5" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp6" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp7" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp8" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp9" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp10" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp11" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp12" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp13" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp14" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp15" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp16" android:duration="50" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp15" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp14" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp13" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp12" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp11" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp10" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp9" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp8" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp7" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp6" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp5" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp4" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp3" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp2" android:duration="100" />
+    <item android:drawable="@drawable/leaderboard_cells_animation_twp1" android:duration="50" />
+
+</animation-list>

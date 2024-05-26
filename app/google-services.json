@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303199232945",
+    "project_id": "arcade-blast-project",
+    "storage_bucket": "arcade-blast-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303199232945:android:fb98d14291bd98cfc29390",
+        "android_client_info": {
+          "package_name": "com.example.arcadeblastproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeowaVIE3WgfVBQNj-BncmB2qIMyFad88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

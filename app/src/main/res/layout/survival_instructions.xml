@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/custom_text"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/pangolin_regular"
+        android:textColor="@color/black"
+        android:padding="4dp"
+        android:id="@+id/sLine1"
+        android:textSize="20dp"
+        android:text="How To Play:">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/sLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pangolin_regular"
+        android:padding="4dp"
+        android:text="Your goal is to survive as long as you can"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sLine1"
+        app:layout_constraintVertical_bias="0.0">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/sLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pangolin_regular"
+        android:padding="4dp"
+        android:text="and kill a lot of enemies"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sLine2"
+        app:layout_constraintVertical_bias="0.0">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sLine3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="@font/pangolin_regular"
+        android:textColor="@color/black"
+        android:padding="4dp"
+        android:textSize="16dp"
+        android:text="by tapping the screen to cast spells">
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

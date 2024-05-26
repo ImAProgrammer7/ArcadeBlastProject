@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the following to login:"
+        android:layout_margin="8dp"
+        android:layout_gravity="start"
+        android:textSize="18dp"
+        android:fontFamily="@font/pangolin_regular"
+        android:textColor="@color/dark_gray">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_input"
+        android:padding="2dp"
+        android:hint="Username"
+        android:layout_margin="8dp"
+        android:id="@+id/lUsername"
+        android:gravity="center"
+        android:fontFamily="@font/pangolin_regular">
+
+    </EditText>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:background="@drawable/custom_input"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:id="@+id/lPassword"
+        android:fontFamily="@font/pangolin_regular">
+
+    </EditText>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        android:background="@drawable/custom_text"
+        android:layout_margin="8dp"
+        android:paddingRight="6dp"
+        android:id="@+id/rememberLogin"
+        android:paddingLeft="6dp"
+        android:textColor="@color/dark_gray"
+        android:textSize="12dp">
+
+    </RadioButton>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Login"
+        android:fontFamily="@font/pangolin_regular"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_buttons"
+        android:onClick="login">
+
+    </Button>
+
+</LinearLayout>

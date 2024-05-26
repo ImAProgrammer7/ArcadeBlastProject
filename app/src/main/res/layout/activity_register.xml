@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Register">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the following to register:"
+        android:layout_margin="8dp"
+        android:layout_gravity="start"
+        android:textSize="18dp"
+        android:fontFamily="@font/pangolin_regular"
+        android:textColor="@color/dark_gray">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_input"
+        android:hint="First Name"
+        android:padding="2dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:id="@+id/firstNameRegister"
+        android:fontFamily="@font/pangolin_regular">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/fNameInvalid"
+        android:textColor="@color/red">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_input"
+        android:hint="Last Name"
+        android:layout_margin="8dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:id="@+id/lastNameRegister"
+        android:fontFamily="@font/pangolin_regular">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/lNameInvalid"
+        android:textColor="@color/red">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_input"
+        android:padding="2dp"
+        android:hint="Username"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:id="@+id/usernameRegister"
+        android:fontFamily="@font/pangolin_regular">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/uNameInvalid"
+        android:textColor="@color/red">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:background="@drawable/custom_input"
+        android:hint="Password"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:id="@+id/passwordRegister"
+        android:fontFamily="@font/pangolin_regular">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/pInvalid"
+        android:textColor="@color/red">
+
+    </TextView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Register"
+        android:fontFamily="@font/pangolin_regular"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_buttons"
+        android:onClick="register">
+
+    </Button>
+
+</LinearLayout>

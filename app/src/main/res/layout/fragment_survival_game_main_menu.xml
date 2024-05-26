@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/survival_main_menu_background"
+    tools:context=".SurvivalGameMainMenuFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/yellow"
+        android:fontFamily="@font/pangolin_regular"
+        android:textSize="18dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/energyTextView"
+        android:gravity="center"
+        android:background="@drawable/energy_ui">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/survivalTitle"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:background="@drawable/custom_text"
+        android:fontFamily="@font/pangolin_regular"
+        android:gravity="center"
+        android:text="Survivor"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/survivalGameRules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_buttons"
+        android:fontFamily="@font/pangolin_regular"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:text="How To Play"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/survivalTitle">
+
+    </Button>
+
+    <Button
+        android:id="@+id/survivalStartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_buttons"
+        android:fontFamily="@font/pangolin_regular"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:text="Play Game"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/survivalGameRules">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/survivalHighestScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_text"
+        android:fontFamily="@font/pangolin_regular"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="Highest Score: "
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/survivalStartButton">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/survivalLeaderboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/custom_buttons"
+        android:fontFamily="@font/pangolin_regular"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:text="Leaderboard"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/survivalHighestScore">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
