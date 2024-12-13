@@ -24,6 +24,12 @@
         android:theme="@style/Theme.ArcadeBlastProject"
         tools:targetApi="31">
         <activity
+            android:name=".Lobby"
+            android:exported="false" />
+        <activity
+            android:name=".MultiplayerGameScreen"
+            android:exported="false" />
+        <activity
             android:name=".SurvivalLeaderboard"
             android:exported="false" />
         <activity

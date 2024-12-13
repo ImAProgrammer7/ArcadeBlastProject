@@ -6,15 +6,23 @@ public class MapLayout {
     public static final int TILE_HEIGHT_PIXEL = 120;
     public static final int NUMBER_OF_ROW_TILES = 30;
     public static final int NUMBER_OF_COLUMN_TILES = 30;
+    public static final int MULTIPLAYER_NUMBER_OF_COLUMN_TILES = 5;
+    public static final int MULTIPLAYER_NUMBER_OF_ROW_TILES = 5;
 
     private int[][] layout;
+    private int[][] multiplayerGameLayout;
 
     public MapLayout(){
         initializeLayout();
+        initializeMultiplayerGameLayout();
     }
 
     public int[][] getLayout(){
         return layout;
+    }
+
+    public int[][] getMultiplayerGameLayout() {
+        return multiplayerGameLayout;
     }
 
     private void initializeLayout() {
@@ -139,6 +147,16 @@ public class MapLayout {
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
                 {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}
+        };
+    }
+
+    private void initializeMultiplayerGameLayout() {
+        multiplayerGameLayout = new int[][]{
+                {2, 2, 2, 2, 2},
+                {2, 2, 2, 2, 2},
+                {2, 2, 1, 2, 2},
+                {2, 2, 2, 2, 2},
+                {2, 2, 2, 2, 2}
         };
     }
 }

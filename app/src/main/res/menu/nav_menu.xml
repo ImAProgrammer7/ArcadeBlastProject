@@ -18,6 +18,11 @@
             android:title="Survival" />
 
         <item
+            android:id="@+id/nav_multiplayer"
+            android:icon="@drawable/baseline_android_24"
+            android:title="Multiplayer Fighting" />
+
+        <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/baseline_account_circle_24"
             android:title="Profile" />

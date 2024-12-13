@@ -30,6 +30,7 @@ public class SnakeMainMenu extends AppCompatActivity implements NavigationView.O
     public static ProfileFragment profileFragment = new ProfileFragment();
     public static Settings settingsFragment = new Settings();
     public static SurvivalGameMainMenuFragment survivalGameMainMenuFragment = new SurvivalGameMainMenuFragment();
+    public static MultiplayerGame multiplayerGameFragment = new MultiplayerGame();
     private DrawerLayout drawerLayout;
 
     @Override
@@ -72,6 +73,8 @@ public class SnakeMainMenu extends AppCompatActivity implements NavigationView.O
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, settingsFragment).commit();
         } else if (id == R.id.nav_survival) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, survivalGameMainMenuFragment).commit();
+        } else if (id == R.id.nav_multiplayer){
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, multiplayerGameFragment).commit();
         } else if (id == R.id.nav_logout) {
             Intent go = new Intent(this, Login.class);
             startActivity(go);
