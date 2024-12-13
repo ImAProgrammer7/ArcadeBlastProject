@@ -171,14 +171,15 @@ public class SurvivalGameMainMenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent go = new Intent(getContext(), SurvivalGameScreen.class);
-                if (Energy.getCurrentEnergy() - 5 >= 0) {
+                startActivity(go);
+                /*if (Energy.getCurrentEnergy() - 5 >= 0) {
                     Energy.setCurrentEnergy(Energy.getCurrentEnergy() - 5);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putInt("energyCount", Energy.getCurrentEnergy());
                     editor.apply();
 
-                    startActivity(go);
-                }
+
+                }*/
             }
         });
 
