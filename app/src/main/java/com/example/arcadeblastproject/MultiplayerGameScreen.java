@@ -34,6 +34,6 @@ public class MultiplayerGameScreen extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Comment out "super.onBackPressed()" to disable button
-        //super.onBackPressed();
+        super.onBackPressed();
     }
 }

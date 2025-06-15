@@ -68,7 +68,7 @@ public class MultiplayerGame extends Fragment {
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent go = new Intent(getContext(), Lobby.class);
+                Intent go = new Intent(getContext(), MultiplayerGameScreen.class);
                 startActivity(go);
             }
         });

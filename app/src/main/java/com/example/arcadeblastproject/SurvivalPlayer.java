@@ -16,6 +16,7 @@ public class SurvivalPlayer extends Circle{
     private static int top;
     private static int right;
     private static int bottom;
+    private static int playerNumber;
 
     private Bitmap sprite;
     private Paint paint;
@@ -40,6 +41,23 @@ public class SurvivalPlayer extends Circle{
         paint = new Paint();
         paint.setColor(Color.RED);
         paint.setAlpha(0);
+    }
+
+    public SurvivalPlayer(Bitmap sprite, Joystick joystick, double playerX, double playerY, double radius, Context context, Animator animator, SpriteSheet spriteSheet, int playerNumber){
+        super(playerX, playerY, radius, sprite);
+        //this.sprite = scaleSprites(sprite);
+        this.joystick = joystick;
+        this.healthBar = new HealthBar(this, context);
+        this.healthPoints = MAX_HEALTH_POINTS;
+        this.animator = animator;
+        this.playerState = new PlayerState(this);
+        Sprite[] playerFromSheet = spriteSheet.getPlayerSpriteArray();
+        this.referenceSprite = playerFromSheet[0];
+
+        paint = new Paint();
+        paint.setColor(Color.RED);
+        paint.setAlpha(0);
+        SurvivalPlayer.setPlayerNumber(playerNumber);
     }
 
     public void draw(Canvas canvas, GameDisplay gameDisplay){
@@ -103,5 +121,13 @@ public class SurvivalPlayer extends Circle{
 
     public void setHealthPoints(int i) {
         healthPoints = i;
+    }
+
+    public static int getPlayerNumber() {
+        return playerNumber;
+    }
+
+    public static void setPlayerNumber(int playerNumber) {
+        SurvivalPlayer.playerNumber = playerNumber;
     }
 }

@@ -12,6 +12,7 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -19,7 +20,12 @@ import android.view.SurfaceView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -47,6 +53,12 @@ public class MultiplayerGameGameplay extends SurfaceView implements SurfaceHolde
     private int[] fireballSounds;
     private SharedPreferences sharedPreferences;
     private ArrayList<DatabaseReference> players;
+    private ArrayList<SurvivalPlayer> playersWork = new ArrayList<>();
+    private SurvivalPlayer player1, player2, player;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference myRef = database.getReference("Player 1");
+    private DatabaseReference myRef2 = database.getReference("Player 2");
+    private DatabaseReference playerCountRef = database.getReference("Player Count");
 
     public MultiplayerGameGameplay(Context context) {
         super(context);
@@ -125,15 +137,49 @@ public class MultiplayerGameGameplay extends SurfaceView implements SurfaceHolde
         SpriteSheet spriteSheet = new SpriteSheet(context);
         Animator animator = new Animator(spriteSheet.getPlayerSpriteArray());
 
-        for (DatabaseReference databaseReference : players){
-            SurvivalPlayer player = new SurvivalPlayer(playerSprite, joystick,width / 2, height / 2, 60, getContext(), animator, spriteSheet);
-            playerList.add(player);
-        }
+
+
+        int count = 0;
+        /*for (DatabaseReference databaseReference : players){
+            if (count == 0) {
+                player = new SurvivalPlayer(playerSprite, joystick, width / 2, height / 2, 60, getContext(), animator, spriteSheet);
+                playerList.add(player1);
+            }
+            if (count == 1){
+                player = new SurvivalPlayer(playerSprite, joystick, 0, 0, 60, getContext(), animator, spriteSheet);
+                if (player != null)
+                    System.out.println("hellllllllllllllllllooooooooooooooooooooooooooooooooooooooooo player");
+                playerList.add(player2);
+            }
+            count++;
+        }*/
+
+        playerCountRef.get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                int currentPlayers = dataSnapshot.getValue(Integer.class);
+                System.out.println(currentPlayers);
+                if (currentPlayers == 0){
+                    player = new SurvivalPlayer(playerSprite, joystick, width / 2, height / 2, 60, getContext(), animator, spriteSheet, 1);
+                    playersWork.add(player);
+                    playerCountRef.setValue(1);
+                } else if (currentPlayers == 1){
+                    player = new SurvivalPlayer(playerSprite, joystick, 0, 0, 60, getContext(), animator, spriteSheet, 2);
+                    playersWork.add(player);
+                    playerCountRef.setValue(2);
+                }
+            }
+        });
+
+
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
-        gameDisplay = new GameDisplay(displayMetrics.widthPixels, displayMetrics.heightPixels, playerList.get(0));
+        gameDisplay = new GameDisplay(displayMetrics.widthPixels, displayMetrics.heightPixels, player);
+        if (gameDisplay == null)
+            System.out.println("hellllllllllllllllllooooooooooooooooooooooooooooooooooooooooo game displayu");
+        //gameDisplay = new GameDisplay(displayMetrics.widthPixels, displayMetrics.heightPixels, player2);
 
         tilemap = new MultiplayerTilemap(spriteSheet);
 
@@ -145,9 +191,10 @@ public class MultiplayerGameGameplay extends SurfaceView implements SurfaceHolde
         super.draw(canvas);
 
         tilemap.draw(canvas, gameDisplay);
-        for (int i = 0; i < playerList.size(); i++) {
+        /*for (int i = 0; i < playerList.size(); i++) {
             playerList.get(i).draw(canvas, gameDisplay);
-        }
+        }*/
+        playersWork.get(SurvivalPlayer.getPlayerNumber() - 1).draw(canvas, gameDisplay);
 
         try{
             for (Spell spell: spellsList){
@@ -158,10 +205,14 @@ public class MultiplayerGameGameplay extends SurfaceView implements SurfaceHolde
         }
 
         // Draw game over
-        for (int i = 0; i < playerList.size(); i++) {
+        /*for (int i = 0; i < playerList.size(); i++) {
             if (playerList.get(i).getHealthPoints() <= 0){
                 gameOver.draw(canvas);
             }
+        }*/
+
+        if (player.getHealthPoints() <= 0){
+            gameOver.draw(canvas);
         }
 
         joystick.draw(canvas);
@@ -189,25 +240,35 @@ public class MultiplayerGameGameplay extends SurfaceView implements SurfaceHolde
 
     public void update() {
         // Stop updating the game after the player is dead
-        for (int i = 0; i < playerList.size(); i++) {
+        /*for (int i = 0; i < playerList.size(); i++) {
             if (playerList.get(i).getHealthPoints() <= 0){
                 return;
             }
+        }*/
+        if (player == null) {
+            System.out.println("hellllllllllllllllllooooooooooooooooooooooooooooooooooooooooo");
+            return;
+        }
+
+        if (player.getHealthPoints() <= 0){
+            return;
         }
 
         joystick.update();
-        for (int i = 0; i < playerList.size(); i++) {
+        /*for (int i = 0; i < playerList.size(); i++) {
             playerList.get(i).update();
-        }
+        }*/
+
+        player.update();
 
         while (numberOfSpellsToCast > 0){
             if (!sharedPreferences.getBoolean("soundEffects", false)){
                 playFireballSoundEffect();
             }
-            for (int i = 0; i < playerList.size(); i++) {
+            /*for (int i = 0; i < playerList.size(); i++) {
                 spellsList.add(new Spell(playerList.get(i), spellSprite));
-            }
-
+            }*/
+            spellsList.add(new Spell(player, spellSprite));
             numberOfSpellsToCast--;
         }
 
@@ -220,10 +281,18 @@ public class MultiplayerGameGameplay extends SurfaceView implements SurfaceHolde
         }
 
         Iterator<Spell> spellIterator = spellsList.iterator();
-        while (spellIterator.hasNext()){
+        while (spellIterator.hasNext()) {
             Circle spell = spellIterator.next();
-            if (Circle.isColliding(spell, spell)){
-                //spellIterator.remove();
+            /*for (int i = 0; i < playerList.size(); i++){
+                if (Circle.isColliding(spell, playerList.get(i))){
+                    spellIterator.remove();
+                    playerList.get(i).setHealthPoints(playerList.get(i).getHealthPoints() - 1);
+                    break;
+                }
+            }*/
+            if (Circle.isColliding(spell, player)) {
+                spellIterator.remove();
+                player.setHealthPoints(player.getHealthPoints() - 1);
                 break;
             }
         }

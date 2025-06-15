@@ -72,7 +72,6 @@ public class Lobby extends AppCompatActivity {
                 playerCountRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        System.out.println("did we enter?");
                         if (snapshot.getValue(Integer.class) == MAX_PLAYERS){
                             playerCountRef.setValue(currentPlayers);
                             myRef.setValue(Login.getActiveUserName());
@@ -95,7 +94,6 @@ public class Lobby extends AppCompatActivity {
     }
 
     private void goToGame() {
-        roomNumber++;
         currentPlayers = 0;
         playerCountRef.setValue(currentPlayers);
         gameStatus = GameStatus.IN_PROGRESS;
